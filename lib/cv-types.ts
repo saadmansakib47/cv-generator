@@ -8,7 +8,7 @@ export interface PersonalInfo {
   github?: string;
   linkedin?: string;
   portfolio?: string;
-  photo?: string; // base64 or url (optional)
+  photo?: string; // URL or base64
 }
 
 export interface Education {
@@ -25,6 +25,13 @@ export interface Project {
   link?: string;
 }
 
+export interface Experience {
+  title: string;
+  organization: string;
+  dates: string;
+  description: string;
+}
+
 export interface SkillCategory {
   category: string;
   skills: string;
@@ -34,16 +41,22 @@ export interface CVData {
   personal: PersonalInfo;
   summary: string;
   education: Education[];
+  experience: Experience[];        // Added
   projects: Project[];
   skills: SkillCategory[];
   achievements: string[];
   technicalWriting?: string;
-  languages?: string[];
+  languages: string[];
   interests?: string[];
-  showPhoto: boolean;
+  
+  // Section visibility
   showSummary: boolean;
+  showExperience: boolean;
+  showProjects: boolean;
+  showSkills: boolean;
   showAchievements: boolean;
   showTechnicalWriting: boolean;
   showLanguages: boolean;
   showInterests: boolean;
+  showPhoto: boolean;
 }
